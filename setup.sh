@@ -5,7 +5,7 @@ if [[ $host != "root" ]]; then
 	echo "Please switch user to root!"
 	exit
 fi
-mkdir /setupex
+mkdir /setup
 host=$(pwd)
 echo "Moving files..."
 mv $host/setup.sh /setupex
