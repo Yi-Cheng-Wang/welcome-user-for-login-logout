@@ -8,7 +8,7 @@ fi
 mkdir /setup
 host=$(pwd)
 echo "Moving files..."
-mv $host/setup.sh /setupex
+mv $host/setup.sh /setup
 echo "Which user do you want to set up?"
 read user
 cat addIN.txt >> /home/$user/.profile
