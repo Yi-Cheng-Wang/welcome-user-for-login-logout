@@ -26,6 +26,7 @@ mv $host/logout.sh /setup
 mv $host/addIN.txt /setup
 mv $host/addOUT.txt /setup
 mv $host/welmsg.sh /setup
+mv $host/commandinstall.txt /setup
 chmod +x /setup/welmsg.sh
 echo "Moving files successed!"
 cd /setup
@@ -33,39 +34,45 @@ where=$(pwd)
 if [[ $where != "/setup" ]]; then 
 	echo "Error!"
 fi
-echo "Checking ......"
+echo "Checking ......."
 if [[ -f "./setup.sh" ]]; then
-	echo "Checking *....."
+	echo "Checking *......"
 else
 	echo "Unknow error!"
 	exit
 fi
 if [[ -f "./login.sh" ]]; then
-        echo "Checking **...."
+        echo "Checking **....."
 else
         echo "Unknow error!"
         exit
 fi
 if [[ -f "./logout.sh" ]]; then
-        echo "Checking ***..."
+        echo "Checking ***...."
 else
         echo "Unknow error!"
         exit
 fi
 if [[ -f "./addIN.txt" ]]; then
-        echo "Checking ****.."
+        echo "Checking ****..."
 else
         echo "Unknow error!"
         exit
 fi
 if [[ -f "./addOUT.txt" ]]; then
-        echo "Checking *****."
+        echo "Checking *****.."
 else
         echo "Unknow error!"
         exit
 fi
 if [[ -f "./welmsg.sh" ]]; then
-        echo "Checking ******"
+        echo "Checking ******."
+else
+        echo "Unknow error!"
+        exit
+fi
+if [[ -f "./commandinstall.txt" ]]; then
+        echo "Checking *******"
 else
         echo "Unknow error!"
         exit
