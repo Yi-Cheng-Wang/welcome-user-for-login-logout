@@ -1,0 +1,1 @@
+welmsg=/setup/welmsg.sh

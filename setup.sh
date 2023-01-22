@@ -5,7 +5,7 @@ if [[ $host != "root" ]]; then
 	echo "Please switch user to root!"
 	exit
 fi
-dir=/setup
+dir=/setups
 if [[ -d "$dir" ]]; then
 	call=/setup/welmsg.sh
 	if [[ -f "$call" ]]; then
@@ -28,4 +28,48 @@ mv $host/addOUT.txt /setup
 mv $host/welmsg.sh /setup
 chmod +x /setup/welmsg.sh
 echo "Moving files successed!"
+cd /setup
+where=$(pwd)
+if [[ $where != "/setup" ]]; then 
+	echo "Error!"
+fi
+echo "Checking ......"
+if [[ -f "./setup.sh" ]]; then
+	echo "Checking *....."
+else
+	echo "Unknow error!"
+	exit
+fi
+if [[ -f "./login.sh" ]]; then
+        echo "Checking **...."
+else
+        echo "Unknow error!"
+        exit
+fi
+if [[ -f "./logout.sh" ]]; then
+        echo "Checking ***..."
+else
+        echo "Unknow error!"
+        exit
+fi
+if [[ -f "./addIN.txt" ]]; then
+        echo "Checking ****.."
+else
+        echo "Unknow error!"
+        exit
+fi
+if [[ -f "./addOUT.txt" ]]; then
+        echo "Checking *****."
+else
+        echo "Unknow error!"
+        exit
+fi
+if [[ -f "./welmsg.sh" ]]; then
+        echo "Checking ******"
+else
+        echo "Unknow error!"
+        exit
+fi
+cat commandinstall.txt >> /root/.profile
 echo "installation successed!"
+echo "You can use \"\$welmsg\" to use this project."
