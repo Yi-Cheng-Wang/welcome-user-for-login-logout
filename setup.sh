@@ -29,7 +29,7 @@ mv $host/addOUT.txt /setup
 mv $host/welmsg.sh /setup
 mv $host/commandinstall.txt /setup
 mv $host/中文介紹.md /root/welmsg_readme
-mv $host/Enlish_README.sh /root/welmsg_readme
+mv $host/English_README.md /root/welmsg_readme
 chmod +x /setup/welmsg.sh
 echo "Moving files successed!"
 cd /setup
@@ -102,12 +102,13 @@ else
 	echo "Not critical error, installation continue."
         
 fi
-if [[ -f "./Engilsh_README.md" ]]; then
+if [[ -f "./English_README.md" ]]; then
         echo "Checking *********"
 else
-        echo "Error: Engilsh_README.md lost!"
+        echo "Error: English_README.md lost!"
         echo "Not critical error, installation continue."
 fi
-cat commandinstall.txt >> /root/.profile
+cat /setup/commandinstall.txt >> /root/.profile
 echo "installation successed!"
 echo "You can use \"\$welmsg\" to use this project."
+echo "Re-login to start!"
