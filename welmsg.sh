@@ -2,6 +2,7 @@
 echo "Which user do you want to set up?(user.name/__QUIT__)"
 read user
 dir=/home/$user
+cd /setup
 if [[ -d "$dir" ]]; then
 	cat addIN.txt >> /home/$user/.profile
 	cat addOUT.txt >> /home/$user/.bash_logout
